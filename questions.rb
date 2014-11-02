@@ -30,6 +30,7 @@ end
 # [['Bob', 'Clive'], ['Bob', 'Dave'], ['Clive', 'Dave']]
 # make sure you don't have the same pairing twice, 
 def every_possible_pairing_of_students(array)
+	array.combination(2).to_a
 end
 
 # discard the first 3 elements of an array, 
@@ -41,11 +42,13 @@ end
 
 # add an element to the beginning of an array
 def add_element_to_beginning_of_array(array, element)
+	array.unshift(element)
 end
 
 # sort an array of words by their last letter, e.g.
 # ['sky', 'puma', 'maker'] becomes ['puma', 'maker', 'sky']
 def array_sort_by_last_letter_of_word(array)
+	array.sort_by { |word| word[-1] }
 end
 
 # cut strings in half, and return the first half, e.g.
@@ -57,6 +60,7 @@ end
 # turn a positive integer into a negative integer. A negative integer
 # stays negative
 def make_numbers_negative(number)
+
 end
 
 # turn an array of numbers into two arrays of numbers, one an array of 
@@ -75,24 +79,29 @@ end
 
 # return the shortest word in an array
 def shortest_word_in_array(array)
+
 end
 
 # return the shortest word in an array
 def longest_word_in_array(array)
+	array.inject { | memo, word | memo.length > word.length ? memo : word }
 end
 
 # add up all the numbers in an array, so [1, 3, 5, 6]
 # returns 15
 def total_of_array(array)
+
 end
 
 # turn an array into itself repeated twice. So [1, 2, 3]
 # becomes [1, 2, 3, 1, 2, 3]
 def double_array(array)
+
 end
 
 # convert a symbol into a string
 def turn_symbol_into_string(symbol)
+	symbol.to_s
 end
 
 # get the average from an array, rounded to the nearest integer
@@ -140,11 +149,13 @@ end
 # round up a float up and convert it to an Integer,
 # so 3.214 becomes 4
 def round_up_number(float)
+
 end
 
 # round down a float up and convert it to an Integer,
 # so 9.52 becomes 9
 def round_down_number(float)
+	float.to_i
 end
 
 # take a date and format it like dd/mm/yyyy, so Halloween 2013
