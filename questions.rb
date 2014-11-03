@@ -55,7 +55,7 @@ end
 # 'banana' becomes 'ban'. If the string is an odd number of letters
 # round up - so 'apple' becomes 'app'
 def get_first_half_of_string(string)
-	string.slice(0..string.length/2)
+	# string.slice(0..string.length/2)
 end
 
 # turn a positive integer into a negative integer. A negative integer
@@ -79,6 +79,7 @@ end
 # e.g. 'bob'. So in the array ['bob', 'radar', 'eat'], there
 # are 2 palindromes (bob and radar), so the method should return 2
 def number_of_elements_that_are_palindromes(array)
+	array.count { |word| word.reverse == word }
 end
 
 # return the shortest word in an array
@@ -111,7 +112,7 @@ end
 # get the average from an array, rounded to the nearest integer
 # so [10, 15, 25] should return 33
 def average_of_array(array)
-	array.reduce(:+) / array.size
+	# array.reduce(:+) / array.size
 end
 
 # get all the elements in an array, up until the first element
@@ -119,7 +120,7 @@ end
 # [1, 3, 5, 4, 1, 2, 6, 2, 1, 3, 7]
 # becomes [1, 3, 5, 4, 1, 2]
 def get_elements_until_greater_than_five(array)
-
+	array.take_while { |num| num <= 5 }
 end
 
 # turn an array (with an even number of elements) into a hash, by
@@ -134,6 +135,7 @@ end
 # . e.g. the array ['cat', 'dog', 'fish'] becomes
 # ['a', 'c', 'd', 'f', 'g', 'h', 'i', 'o', 's', 't']
 def get_all_letters_in_array_of_words(array)
+	array.map { |word| word.split('')}.flatten.sort
 end
 
 # swap the keys and values in a hash. e.g.
@@ -151,12 +153,13 @@ end
 # take out all the capital letters from a string
 # so 'Hello JohnDoe' becomes 'ello ohnoe'
 def remove_capital_letters_from_string(string)
+	string.gsub(/[A-Z]/, '')
 end
 
 # round up a float up and convert it to an Integer,
 # so 3.214 becomes 4
 def round_up_number(float)
-
+	float.ceil
 end
 
 # round down a float up and convert it to an Integer,
@@ -181,6 +184,7 @@ end
 # 'the lion the witch and the wardrobe' becomes
 # 'The Lion the Witch and the Wardrobe'
 def titleize_a_string(string)
+	string.split.map { |word| word.capitalize }.join(' ')
 end
 
 # return true if a string contains any special characters
@@ -197,14 +201,17 @@ end
 # should return true for a 3 dot range like 1...20, false for a 
 # normal 2 dot range
 def is_a_3_dot_range?(range)
+	
 end
 
 # get the square root of a number
 def square_root_of(number)
+
 end
 
 # count the number of words in a file
 def word_count_a_file(file_path)
+
 end
 
 # --- tougher ones ---
